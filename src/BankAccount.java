@@ -63,11 +63,26 @@ public class BankAccount {
         return customer;
     }
 
-    public static BankAccount[] add(BankAccount[] accountList, BankAccount account)
+    public static BankAccount[] expand(BankAccount[] originalBank)
     {
-        BankAccount[] accounts = new BankAccount[accountList.length];
-        accounts[accountList.length] = account;
+        BankAccount[] biggerBank = new BankAccount[originalBank.length+1];
+        return biggerBank;
+    }
 
-        return accounts;
+    public static void add(BankAccount[] accounts,BankAccount account)
+    {
+        accounts[accounts.length-1] = account;
+    }
+
+    public static String arrayToString(BankAccount[] accounts)
+    {
+        String arrayString="";
+
+        for(int i=0; i<accounts.length; i++)
+        {
+            arrayString+=accounts[i].toString();
+        }
+
+        return arrayString;
     }
 }

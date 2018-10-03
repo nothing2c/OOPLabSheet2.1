@@ -22,9 +22,13 @@ public class BankAccountTest {
 
                 account.setAccNum(JOptionPane.showInputDialog("Please enter the account number"));
 
-                BankAccount.add(accounts, account);
+                accounts=BankAccount.expand(accounts);
 
+                BankAccount.add(accounts,account);
 
+                System.out.println(accounts.length);
+
+                JOptionPane.showMessageDialog(null,BankAccount.arrayToString(accounts));
             }
 
 
