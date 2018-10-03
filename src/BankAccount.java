@@ -12,8 +12,31 @@ public class BankAccount {
 
     public BankAccount()
     {
-        unknown = new Person("Unknown");
-        this("0",0, unknown);
+        setAccNum("0");
+        setBalance(0);
+        customer = new Person("Unknown");
+    }
+
+    public String toString()
+    {
+        return "Account Number: "+getAccNum()+"\nBalance: €"+String.format("%.2f",getBalance())+"\nAccount Holder: "+customer.getName();
+    }
+
+    public void lodgeMoney(double money)
+    {
+        setBalance(getBalance()+money);
+    }
+
+    public void withdrawMoney(double money)
+    {
+        double temp;
+
+        temp=getBalance()-money;
+
+        if(temp>0)
+        {
+            setBalance(getBalance()-money);
+        }
     }
 
     public void setAccNum(String accNum) {
@@ -38,5 +61,13 @@ public class BankAccount {
 
     public Person getCustomer() {
         return customer;
+    }
+
+    public static BankAccount[] add(BankAccount[] accountList, BankAccount account)
+    {
+        BankAccount[] accounts = new BankAccount[accountList.length];
+        accounts[accountList.length] = account;
+
+        return accounts;
     }
 }
