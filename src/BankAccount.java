@@ -1,7 +1,7 @@
 public class BankAccount {
     private String accNum;
-    double balance;
-    Person customer;
+    private double balance;
+    private Person customer;
 
     public BankAccount(String accNum, double balance, Person customer)
     {
@@ -66,6 +66,12 @@ public class BankAccount {
     public static BankAccount[] expand(BankAccount[] originalBank)
     {
         BankAccount[] biggerBank = new BankAccount[originalBank.length+1];
+
+        for(int i=0; i<originalBank.length;i++)
+        {
+            biggerBank[i] = originalBank[i];
+        }
+
         return biggerBank;
     }
 
@@ -80,7 +86,7 @@ public class BankAccount {
 
         for(int i=0; i<accounts.length; i++)
         {
-            arrayString+=accounts[i].toString();
+            arrayString+=(accounts[i].toString()+"\n\n");
         }
 
         return arrayString;

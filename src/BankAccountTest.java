@@ -26,12 +26,8 @@ public class BankAccountTest {
 
                 BankAccount.add(accounts,account);
 
-                System.out.println(accounts.length);
-
                 JOptionPane.showMessageDialog(null,BankAccount.arrayToString(accounts));
             }
-
-
         }
     }
 }
