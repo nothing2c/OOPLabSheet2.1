@@ -22,10 +22,10 @@ public class MyFlicks {
 
                 film.setDuration(Integer.parseInt(JOptionPane.showInputDialog("Please enter the duration")));
 
-                Film.add(films, film);
+                films=Film.add(films, film);
             }
-
-            Film.displayFilms(films);
         }
+
+        Film.displayFilms(films);
     }
 }

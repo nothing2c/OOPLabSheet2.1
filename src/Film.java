@@ -64,24 +64,31 @@ public class Film {
         return biggerArray;
     }
 
-    public static void add(Film[] films,Film newFilm)
+    public static Film[] add(Film[] films,Film newFilm)
     {
         Film[] biggerFilms = expand(films);
         biggerFilms[biggerFilms.length-1] = newFilm;
+        System.out.println("im here"+biggerFilms.length);
+
+        return  biggerFilms;
     }
 
     public static void displayFilms(Film[] films)
     {
         JTextArea display = new JTextArea();
+        display.setText("Number of Films: "+getNumOfFilms()+"\n");
 
-        String displayText="Number of Films: "+getNumOfFilms();
+        String displayText="";
 
         for(int i=0;i<films.length;i++)
         {
-            displayText+=films[i].toString()+"\n\n";
+            displayText+="\n"+films[i].toString()+"\n";
+            System.out.println("im here");
         }
 
         display.append(displayText);
+
+        System.out.println(displayText);
 
         JOptionPane.showMessageDialog(null, display);
     }
